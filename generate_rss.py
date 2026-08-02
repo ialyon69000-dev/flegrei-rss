@@ -54,10 +54,18 @@ Type : {ev.get('type')}
             href=f"{BASE_URL}event_{event_id}.html"
         )
 
-        dt = datetime.strptime(
-            ev["date"],
-            "%Y-%m-%d %H:%M:%S.%f"
-        ).replace(tzinfo=timezone.utc)
+try:
+    dt = datetime.strptime(
+        ev["date"],
+        "%Y-%m-%d %H:%M:%S.%f"
+    )
+except ValueError:
+    dt = datetime.strptime(
+        ev["date"],
+        "%Y-%m-%d %H:%M:%S"
+    )
+
+dt = dt.replace(tzinfo=timezone.utc)
 
         entry.pubDate(format_datetime(dt))
 
