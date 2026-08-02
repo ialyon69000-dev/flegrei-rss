@@ -115,7 +115,9 @@ def create_feed(events):
     )
 
     return fg
-    def build_entries(fg, events, state):
+
+
+def build_entries(fg, events, state):
 
     seen = set(state.get("seen", []))
 
@@ -174,7 +176,7 @@ Profondeur : {loc.get('depth')} km
     state["seen"] = new_seen[:1000]
 
     return state
-
+    
 
 def main():
 
