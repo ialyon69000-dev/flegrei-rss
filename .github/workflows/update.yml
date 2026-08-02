@@ -1,4 +1,4 @@
-name: Update Flegrei RSS
+name: Update Campi Flegrei RSS
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: rss-update
+  group: flegrei-rss
   cancel-in-progress: true
 
 jobs:
@@ -40,22 +40,25 @@ jobs:
         run: |
           python generate_rss.py
 
+      - name: Show generated files
+        run: |
+          ls -lah
+          test -f feed.xml && echo "feed.xml OK"
+          test -f state.json && echo "state.json OK"
+
       - name: Commit changes
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feed.xml state.json
 
-          git add feed.xml
-          git add state.json
-
-          if git diff --cached --quiet
-          then
-              echo "Nothing to commit."
-              exit 0
+          if git diff --cached --quiet; then
+            echo "Aucun changement."
+            exit 0
           fi
 
-          git commit -m "Automatic RSS update"
+          git commit -m "Update RSS $(date -u +'%Y-%m-%d %H:%M UTC')"
 
           git pull --rebase origin main
 
