@@ -1,5 +1,5 @@
 import json
-from pathlib import Path
+import os
 from datetime import datetime, timezone
 from email.utils import format_datetime
 
@@ -9,131 +9,198 @@ from feedgen.feed import FeedGenerator
 
 JSON_URL = "https://terremoti.ov.ingv.it/gossip/flegrei/2026/events.json"
 BASE_URL = "https://terremoti.ov.ingv.it/gossip/flegrei/2026/"
-STATE_FILE = Path("state.json")
+
+STATE_FILE = "state.json"
+RSS_FILE = "feed.xml"
+
 MAX_ITEMS = 100
-
-
-def load_events():
-    r = requests.get(JSON_URL, timeout=30)
-    r.raise_for_status()
-    return r.json()
+TIMEOUT = 30
 
 
 def load_state():
-    if STATE_FILE.exists():
-        return json.loads(STATE_FILE.read_text(encoding="utf-8"))
-    return {"seen_ids": [], "items": []}
+    if not os.path.exists(STATE_FILE):
+        return {"seen": []}
+
+    with open(STATE_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def save_state(state):
-    STATE_FILE.write_text(
-        json.dumps(state, ensure_ascii=False, indent=2),
-        encoding="utf-8"
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2)
+
+
+def load_events():
+
+    r = requests.get(JSON_URL, timeout=TIMEOUT)
+    r.raise_for_status()
+
+    events = r.json()
+
+    events.sort(
+        key=lambda e: e["date"],
+        reverse=True
     )
 
+    return events
 
-def parse_date(date_str):
-    for fmt in ("%Y-%m-%d %H:%M:%S.%f", "%Y-%m-%d %H:%M:%S"):
+
+def parse_date(value):
+
+    formats = (
+        "%Y-%m-%d %H:%M:%S.%f",
+        "%Y-%m-%d %H:%M:%S",
+    )
+
+    for fmt in formats:
         try:
-            return datetime.strptime(date_str, fmt).replace(tzinfo=timezone.utc)
+            return datetime.strptime(value, fmt).replace(
+                tzinfo=timezone.utc
+            )
         except ValueError:
             pass
-    raise ValueError(f"Format de date inconnu : {date_str}")
+
+    raise RuntimeError(value)
 
 
-def fetch_magnitude(event_id):
+def get_magnitude(event_id):
+
     url = f"{BASE_URL}event_{event_id}.html"
+
     try:
-        r = requests.get(url, timeout=15)
-        r.raise_for_status()
+
+        r = requests.get(url, timeout=TIMEOUT)
+
+        if r.status_code != 200:
+            return ""
+
+        soup = BeautifulSoup(r.text, "lxml")
+
+        text = soup.get_text(" ", strip=True)
+
+        import re
+
+        m = re.search(
+            r"Magnitude[^0-9]*([0-9]+\.[0-9]+)",
+            text,
+            re.IGNORECASE,
+        )
+
+        if m:
+            return m.group(1)
+
     except Exception:
-        return None
+        pass
 
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    for row in soup.select(".magnitudo_row"):
-        text = " ".join(row.stripped_strings)
-        if text:
-            return text
-
-    return None
+    return ""
 
 
-def build_item(ev):
-    loc = ev.get("location", {})
-    event_id = ev["id"]
+def create_feed(events):
 
-    magnitude = fetch_magnitude(event_id) or "N/D"
-
-    dt = parse_date(ev["date"])
-
-    return {
-        "id": event_id,
-        "title": f"Séisme #{event_id} - M {magnitude}",
-        "link": f"{BASE_URL}event_{event_id}.html",
-        "description": (
-            f"Date : {ev.get('printdate', ev.get('date'))}\n\n"
-            f"Latitude : {loc.get('latitude')}\n"
-            f"Longitude : {loc.get('longitude')}\n"
-            f"Profondeur : {loc.get('depth')} km\n"
-            f"Magnitude : {magnitude}\n"
-            f"Niveau : {ev.get('level')}\n"
-        ),
-        "pubDate": format_datetime(dt),
-        "epoch": ev.get("epoch", dt.timestamp()),
-    }
-
-
-def generate_feed(items):
     fg = FeedGenerator()
+
     fg.id(BASE_URL)
-    fg.title("Campi Flegrei - GOSSIP (INGV)")
-    fg.link(href=BASE_URL, rel="alternate")
-    fg.description("Flux RSS généré automatiquement depuis les données GOSSIP de l'INGV")
+
+    fg.title("Campi Flegrei - GOSSIP")
+
+    fg.link(
+        href=BASE_URL,
+        rel="alternate"
+    )
+
     fg.language("fr")
 
-    for item in items:
-        fe = fg.add_entry()
-        fe.id(str(item["id"]))
-        fe.title(item["title"])
-        fe.link(href=item["link"])
-        fe.description(item["description"])
-        fe.pubDate(item["pubDate"])
+    fg.description(
+        "Flux RSS automatique des séismes des Campi Flegrei"
+    )
 
-    fg.rss_file("feed.xml")
+    return fg
+    def build_entries(fg, events, state):
+
+    seen = set(state.get("seen", []))
+
+    count = 0
+    new_seen = []
+
+    for ev in events:
+
+        event_id = str(ev["id"])
+
+        new_seen.append(event_id)
+
+        if count >= MAX_ITEMS:
+            break
+
+        loc = ev.get("location", {})
+
+        mag = get_magnitude(event_id)
+
+        if mag:
+            title = f"M{mag} - {ev.get('printdate', ev['date'])}"
+        else:
+            title = f"Séisme - {ev.get('printdate', ev['date'])}"
+
+        description = f"""
+Date : {ev.get('printdate', ev['date'])}
+
+Latitude : {loc.get('latitude')}
+Longitude : {loc.get('longitude')}
+Profondeur : {loc.get('depth')} km
+"""
+
+        if mag:
+            description += f"\nMagnitude : {mag}\n"
+
+        entry = fg.add_entry()
+
+        entry.id(event_id)
+
+        entry.guid(event_id, permalink=False)
+
+        entry.title(title)
+
+        entry.description(description)
+
+        entry.link(
+            href=f"{BASE_URL}event_{event_id}.html"
+        )
+
+        dt = parse_date(ev["date"])
+
+        entry.pubDate(format_datetime(dt))
+
+        count += 1
+
+    state["seen"] = new_seen[:1000]
+
+    return state
 
 
 def main():
+
+    print("Téléchargement des événements...")
+
     events = load_events()
+
+    print(f"{len(events)} événements trouvés")
+
     state = load_state()
 
-    seen = set(state.get("seen_ids", []))
-    items = state.get("items", [])
+    fg = create_feed(events)
 
-    new_count = 0
+    state = build_entries(
+        fg,
+        events,
+        state
+    )
 
-    for ev in events:
-        if ev["id"] in seen:
-            continue
-
-        item = build_item(ev)
-        items.insert(0, item)
-        seen.add(ev["id"])
-        new_count += 1
-
-    items.sort(key=lambda x: x["epoch"], reverse=True)
-    items = items[:MAX_ITEMS]
-
-    state = {
-        "seen_ids": sorted(seen),
-        "items": items,
-    }
+    fg.rss_file(RSS_FILE)
 
     save_state(state)
-    generate_feed(items)
 
-    print(f"Nouveaux événements : {new_count}")
-    print(f"Flux RSS généré avec {len(items)} éléments")
+    print("feed.xml généré")
+
+    print("state.json mis à jour")
 
 
 if __name__ == "__main__":
