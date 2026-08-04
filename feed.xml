@@ -1,17 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Tue, 04 Aug 2026 13:03:19 +0000</lastBuildDate><item><title>Séisme - 2026/08/01 06:58:48</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54143.html</link><description>
-Date : 2026/08/01 06:58:48
-
-Latitude : 40.822333
-Longitude : 14.149
-Profondeur : 1.38 km
-</description><guid isPermaLink="false">54143</guid><pubDate>Sat, 01 Aug 2026 06:58:48 +0000</pubDate></item><item><title>Séisme - 2026/08/01 07:16:23</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54144.html</link><description>
-Date : 2026/08/01 07:16:23
-
-Latitude : 40.815667
-Longitude : 14.091
-Profondeur : 1.55 km
-</description><guid isPermaLink="false">54144</guid><pubDate>Sat, 01 Aug 2026 07:16:23 +0000</pubDate></item><item><title>Séisme - 2026/08/01 07:22:13</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54145.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Tue, 04 Aug 2026 15:35:58 +0000</lastBuildDate><item><title>Séisme - 2026/08/01 07:22:13</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54145.html</link><description>
 Date : 2026/08/01 07:22:13
 
 Latitude : 40.822
@@ -599,4 +587,16 @@ Date : 2026/08/04 09:00:07
 Latitude : 40.8245
 Longitude : 14.143333
 Profondeur : 1.88 km
-</description><guid isPermaLink="false">54262</guid><pubDate>Tue, 04 Aug 2026 09:00:07 +0000</pubDate></item></channel></rss>
+</description><guid isPermaLink="false">54262</guid><pubDate>Tue, 04 Aug 2026 09:00:07 +0000</pubDate></item><item><title>Séisme - 2026/08/04 13:28:45</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54263.html</link><description>
+Date : 2026/08/04 13:28:45
+
+Latitude : 40.760167
+Longitude : 14.081333
+Profondeur : 1.02 km
+</description><guid isPermaLink="false">54263</guid><pubDate>Tue, 04 Aug 2026 13:28:45 +0000</pubDate></item><item><title>Séisme - 2026/08/04 15:27:11</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54264.html</link><description>
+Date : 2026/08/04 15:27:11
+
+Latitude : 40.829667
+Longitude : 13.808667
+Profondeur : 0.03 km
+</description><guid isPermaLink="false">54264</guid><pubDate>Tue, 04 Aug 2026 15:27:11 +0000</pubDate></item></channel></rss>
