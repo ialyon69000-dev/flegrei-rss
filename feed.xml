@@ -1,23 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Sat, 15 Aug 2026 23:20:43 +0000</lastBuildDate><item><title>Séisme - 2026/08/01 23:59:14</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54203.html</link><description>
-Date : 2026/08/01 23:59:14
-
-Latitude : 40.829833
-Longitude : 14.1465
-Profondeur : 2.34 km
-</description><guid isPermaLink="false">54203</guid><pubDate>Sat, 01 Aug 2026 23:59:14 +0000</pubDate></item><item><title>Séisme - 2026/08/02 00:23:47</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54204.html</link><description>
-Date : 2026/08/02 00:23:47
-
-Latitude : 40.8315
-Longitude : 14.130167
-Profondeur : 1.6 km
-</description><guid isPermaLink="false">54204</guid><pubDate>Sun, 02 Aug 2026 00:23:47 +0000</pubDate></item><item><title>Séisme - 2026/08/02 00:52:05</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54205.html</link><description>
-Date : 2026/08/02 00:52:05
-
-Latitude : 40.8499
-Longitude : 14.1336
-Profondeur : 0.25 km
-</description><guid isPermaLink="false">54205</guid><pubDate>Sun, 02 Aug 2026 00:52:05 +0000</pubDate></item><item><title>Séisme - 2026/08/02 02:06:22</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54206.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Sat, 15 Aug 2026 23:45:37 +0000</lastBuildDate><item><title>Séisme - 2026/08/02 02:06:22</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54206.html</link><description>
 Date : 2026/08/02 02:06:22
 
 Latitude : 40.816833
@@ -596,7 +578,25 @@ Profondeur : 2.67 km
 </description><guid isPermaLink="false">54466</guid><pubDate>Sat, 15 Aug 2026 19:57:09 +0000</pubDate></item><item><title>Séisme - 2026/08/15 23:15:51</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54477.html</link><description>
 Date : 2026/08/15 23:15:51
 
-Latitude : 40.8175
-Longitude : 14.148833
-Profondeur : 1.83 km
-</description><guid isPermaLink="false">54477</guid><pubDate>Sat, 15 Aug 2026 23:15:51 +0000</pubDate></item></channel></rss>
+Latitude : 40.824833
+Longitude : 14.141
+Profondeur : 0.83 km
+</description><guid isPermaLink="false">54477</guid><pubDate>Sat, 15 Aug 2026 23:15:51 +0000</pubDate></item><item><title>Séisme - 2026/08/15 23:24:23</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54479.html</link><description>
+Date : 2026/08/15 23:24:23
+
+Latitude : 40.824
+Longitude : 14.143
+Profondeur : 0.92 km
+</description><guid isPermaLink="false">54479</guid><pubDate>Sat, 15 Aug 2026 23:24:23 +0000</pubDate></item><item><title>Séisme - 2026/08/15 23:24:25</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54480.html</link><description>
+Date : 2026/08/15 23:24:25
+
+Latitude : 40.821667
+Longitude : 14.1395
+Profondeur : 0.43 km
+</description><guid isPermaLink="false">54480</guid><pubDate>Sat, 15 Aug 2026 23:24:25 +0000</pubDate></item><item><title>Séisme - 2026/08/15 23:24:33</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54478.html</link><description>
+Date : 2026/08/15 23:24:33
+
+Latitude : 40.824667
+Longitude : 14.138833
+Profondeur : 0.75 km
+</description><guid isPermaLink="false">54478</guid><pubDate>Sat, 15 Aug 2026 23:24:33 +0000</pubDate></item></channel></rss>
