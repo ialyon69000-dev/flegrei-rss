@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 19 Aug 2026 10:04:33 +0000</lastBuildDate><item><title>Séisme - 2026/08/02 04:46:56</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54220.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 19 Aug 2026 10:46:16 +0000</lastBuildDate><item><title>Séisme - 2026/08/02 04:46:56</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54220.html</link><description>
 Date : 2026/08/02 04:46:56
 
 Latitude : 40.828833
@@ -593,10 +593,10 @@ Date : 2026/08/19 07:53:41
 Latitude : 40.8365
 Longitude : 14.126667
 Profondeur : 2.94 km
-</description><guid isPermaLink="false">54541</guid><pubDate>Wed, 19 Aug 2026 07:53:41 +0000</pubDate></item><item><title>Séisme - 2026/08/19 09:59:29</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54543.html</link><description>
-Date : 2026/08/19 09:59:29
+</description><guid isPermaLink="false">54541</guid><pubDate>Wed, 19 Aug 2026 07:53:41 +0000</pubDate></item><item><title>Séisme - 2026/08/19 09:59:28</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54543.html</link><description>
+Date : 2026/08/19 09:59:28
 
-Latitude : 40.839167
-Longitude : 14.097667
-Profondeur : 1 km
-</description><guid isPermaLink="false">54543</guid><pubDate>Wed, 19 Aug 2026 09:59:29 +0000</pubDate></item></channel></rss>
+Latitude : 40.826333
+Longitude : 14.079
+Profondeur : 2.75 km
+</description><guid isPermaLink="false">54543</guid><pubDate>Wed, 19 Aug 2026 09:59:28 +0000</pubDate></item></channel></rss>
