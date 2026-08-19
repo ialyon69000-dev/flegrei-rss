@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 19 Aug 2026 08:54:52 +0000</lastBuildDate><item><title>Séisme - 2026/08/02 04:46:01</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54221.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 19 Aug 2026 09:34:34 +0000</lastBuildDate><item><title>Séisme - 2026/08/02 04:46:01</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_54221.html</link><description>
 Date : 2026/08/02 04:46:01
 
 Latitude : 40.838667
