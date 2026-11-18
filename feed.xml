@@ -1,29 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 18 Nov 2026 02:56:01 +0000</lastBuildDate><item><title>Séisme - 2026/10/27 16:31:22</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55308.html</link><description>
-Date : 2026/10/27 16:31:22
-
-Latitude : 40.837333
-Longitude : 14.121333
-Profondeur : 1.44 km
-</description><guid isPermaLink="false">55308</guid><pubDate>Tue, 27 Oct 2026 16:31:22 +0000</pubDate></item><item><title>Séisme - 2026/10/27 16:31:53</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55323.html</link><description>
-Date : 2026/10/27 16:31:53
-
-Latitude : 40.838333
-Longitude : 14.120333
-Profondeur : 1.64 km
-</description><guid isPermaLink="false">55323</guid><pubDate>Tue, 27 Oct 2026 16:31:53 +0000</pubDate></item><item><title>Séisme - 2026/10/27 16:31:57</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55310.html</link><description>
-Date : 2026/10/27 16:31:57
-
-Latitude : 40.835167
-Longitude : 14.118667
-Profondeur : 1.47 km
-</description><guid isPermaLink="false">55310</guid><pubDate>Tue, 27 Oct 2026 16:31:57 +0000</pubDate></item><item><title>Séisme - 2026/10/27 16:32:04</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55309.html</link><description>
-Date : 2026/10/27 16:32:04
-
-Latitude : 40.8395
-Longitude : 14.123333
-Profondeur : 1.7 km
-</description><guid isPermaLink="false">55309</guid><pubDate>Tue, 27 Oct 2026 16:32:04 +0000</pubDate></item><item><title>Séisme - 2026/10/27 16:35:03</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55324.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Campi Flegrei - GOSSIP</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/</link><description>Flux RSS automatique des séismes des Campi Flegrei</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Wed, 18 Nov 2026 11:18:32 +0000</lastBuildDate><item><title>Séisme - 2026/10/27 16:35:03</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55324.html</link><description>
 Date : 2026/10/27 16:35:03
 
 Latitude : None
@@ -599,4 +575,28 @@ Date : 2026/11/17 21:50:43
 Latitude : 40.825
 Longitude : 14.143333
 Profondeur : 0.95 km
-</description><guid isPermaLink="false">55489</guid><pubDate>Tue, 17 Nov 2026 21:50:43 +0000</pubDate></item></channel></rss>
+</description><guid isPermaLink="false">55489</guid><pubDate>Tue, 17 Nov 2026 21:50:43 +0000</pubDate></item><item><title>Séisme - 2026/11/18 08:48:14</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55494.html</link><description>
+Date : 2026/11/18 08:48:14
+
+Latitude : 40.835
+Longitude : 14.151667
+Profondeur : 1.72 km
+</description><guid isPermaLink="false">55494</guid><pubDate>Wed, 18 Nov 2026 08:48:14 +0000</pubDate></item><item><title>Séisme - 2026/11/18 08:50:41</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55492.html</link><description>
+Date : 2026/11/18 08:50:41
+
+Latitude : 40.831333
+Longitude : 14.145167
+Profondeur : 1.77 km
+</description><guid isPermaLink="false">55492</guid><pubDate>Wed, 18 Nov 2026 08:50:41 +0000</pubDate></item><item><title>Séisme - 2026/11/18 08:50:45</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55495.html</link><description>
+Date : 2026/11/18 08:50:45
+
+Latitude : 40.834833
+Longitude : 14.151667
+Profondeur : 1.63 km
+</description><guid isPermaLink="false">55495</guid><pubDate>Wed, 18 Nov 2026 08:50:45 +0000</pubDate></item><item><title>Séisme - 2026/11/18 08:51:54</title><link>https://terremoti.ov.ingv.it/gossip/flegrei/2026/event_55493.html</link><description>
+Date : 2026/11/18 08:51:54
+
+Latitude : 40.8727
+Longitude : 14.1907
+Profondeur : 0.38 km
+</description><guid isPermaLink="false">55493</guid><pubDate>Wed, 18 Nov 2026 08:51:54 +0000</pubDate></item></channel></rss>
